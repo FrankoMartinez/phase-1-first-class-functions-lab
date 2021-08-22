@@ -16,9 +16,21 @@ function createFareMultiplier(integer) {
     }
 }
 
-function createFareMultiplier() {
-    const double = function fareDoubler(fare) {
-        return fare ** 2;
-    }
-    return double;
+function fareDoubler(fare) {
+   const double = createFareMultiplier(2)
+   return double(fare);
 }
+
+function fareTripler(fare) {
+    const triple = createFareMultiplier(3)
+    return triple(fare);
+ }
+
+function selectDifferentDrivers(drivers, task) {
+     if(task === returnFirstTwoDrivers) {
+         return drivers.slice(0,2);
+     } else if(task === returnLastTwoDrivers) {
+         return drivers.slice(2);
+     }
+     return selectDifferentDrivers();
+ }
